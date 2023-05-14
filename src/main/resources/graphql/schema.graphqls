@@ -1,0 +1,21 @@
+type Query {
+    accounts : [Account],
+    accountById (id:String) : Account,
+}
+type Mutation{
+    addAcount (newAccount :AccountRequestTDO) : Account,
+    updateAccount(id:String,oldAccount : AccountRequestTDO):Account,
+    deleteAccount(id:String) : Boolean
+}
+
+type Account {
+    id: String,
+    type: String,
+    balance : Float,
+    currency: String
+}
+input AccountRequestTDO {
+    type: String,
+    balance : Float,
+    currency: String
+}
